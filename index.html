@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <script
+			  src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <h1>Daily Specialty Menus</h1>
+        <div id="menus"></div>
+        <script>
+
+            fetch('http://comm-data-dev.beckman.illinois.edu/api/v1/feeds/cafemenus?style=html')
+            .then(function(response) {
+                console.log("Success");
+                response.json().then( function( data ) {
+                    console.log(data);
+                    data.forEach(element => {
+                        $("<p>").appendTo("#menus").html(element.Description);    
+                    });
+                });
+            })
+            .catch(function(message) {
+                console.log("ERROR: " + toString(message));
+            });
+
+        </script>
+    </body>
+</html>
