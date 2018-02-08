@@ -6,6 +6,7 @@
  */
 function GetMenus() {
   // Perform the fetch
+  var self = this;
   self.menus = ko.observableArray();
   fetch(
     "http://comm-data-dev.beckman.illinois.edu/api/v1/feeds/cafemenus?style=unicode"
@@ -14,11 +15,17 @@ function GetMenus() {
       return response.json();
     })
     .then(json => {
-      self.menus(json);
+      console.log("Loading...");
+      MakeMenus(json);
     })
     .catch(function(message) {
       console.log("ERROR: " + toString(message));
     });
+}
+
+function MakeMenus(json) {
+  // Here we need to go through the elements of the JSON and create objects
+  self.menus(json);
 }
 
 /**
@@ -27,6 +34,7 @@ function GetMenus() {
 function DailyMenuViewModel() {
   var self = this;
   GetMenus();
+  //setInterval(GetMenus, 30000);
 }
 
 ko.applyBindings(new DailyMenuViewModel());
