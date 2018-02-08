@@ -26,7 +26,7 @@ function DailyMenuViewModel() {
   self.menus = ko.observableArray([]);
   (function getMenus(){
     fetch(
-      "http://comm-data-dev.beckman.illinois.edu/api/v1/feeds/cafemenus?style=unicode"
+      "http://comm-data-dev.beckman.illinois.edu/api/v1/feeds/cafemenus?style=html"
     )
       .then(response => {
         return response.json();
