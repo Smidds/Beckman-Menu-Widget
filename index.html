@@ -9,9 +9,11 @@
 
 <body>
     <h1>Daily Specialty Menus</h1>
-    <div id="menus"></div>
+    <div data-bind="foreach: menus">
+        <h3 data-bind="text: Title"></h1>
+        <p data-bind="text: Description"></p>
+    </div>
 
-    
     <!-- Script load -->
     <script src="scripts/main.js"></script>
 </body>
