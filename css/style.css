@@ -1,0 +1,12 @@
+* {
+  overflow: hidden;
+}
+
+body{
+background-color:#ffffff;
+}
+
+#output {
+  text-align: center;
+  font-size: 100px;
+}
