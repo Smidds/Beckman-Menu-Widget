@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:sl="http://www.signagelive.com/widgets" id="https://github.com/signagelive/widget-simple-template" version="0.1.0" width="1920" height="1080">
+	<!-- Name of the widget displayed in Signagelive as the name of the Media Asset -->
+	<name>
+		ALPHA - Beckman Cafe Menu Widget
+	</name>
+	<description>
+		The alpha version of the Beckman Cafe Menu Widget
+	</description>
+	<!-- Widget author -->
+	<author>
+		Isaac Smith
+	</author>
+	<!-- Start page for widget -->
+	<content src="index.html" />
+	<!-- Icons to display in Signagelive, not essential as Signagelive will attempt to generate a preview if these are omitted 
+	<icon src="media/thumb.png" sl:thumbnail="large" />
+	<icon src="media/thumb.png" sl:thumbnail="small" />
+  -->
+	<!-- Preferences (Optional)
+	<preference name="Text" value="Hello World" sl:type="string" sl:required="true" />
+  -->
+</widget>

@@ -3,35 +3,21 @@
 
 <head>
     <meta charset="utf-8" />
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-debug.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
 </head>
 
 <body>
     <h1>Daily Specialty Menus</h1>
-    <div id="menus"></div>
-
+    <div data-bind="foreach: menus">
+        <h3 data-bind="text: title"></h1>
+        <p data-bind="html: desc"></p>
+    </div>
 
     <!-- Script load -->
-    <script>
-        // Perform the fetch
-        var JSONResponseData
-        fetch('http://comm-data-dev.beckman.illinois.edu/api/v1/feeds/cafemenus?style=html')
-            .then(function (response) {
-                response.json().then(function (data) {
-                    self.menuArray = ko.observableArray(data);
-
-                    data.forEach(element => {
-                        $("<div>").attr("class", "menuItem").appendTo("#menus").html(element.Description);
-                    });
-                });
-            })
-            .catch(function (message) {
-                console.log("ERROR: " + toString(message));
-            });
-
-    </script>
-
-    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-debug.js"></script>
+    <script src="scripts/main.js"></script>
 </body>
 
 </html>
