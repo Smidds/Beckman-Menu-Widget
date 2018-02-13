@@ -25,17 +25,24 @@ function DailyMenuViewModel() {
   var self = this;
   self.menus = ko.observableArray([]);
   (function getMenus(){
-    fetch(
-      "http://comm-data-dev.beckman.illinois.edu/api/v1/feeds/cafemenus?style=html"
-    )
-      .then(response => {
-        return response.json();
-      })
-      .then(json => {
-        self.menus(MakeMenus(json));
-      });
+    // fetch(
+    //   "http://comm-data-dev.beckman.illinois.edu/api/v1/feeds/cafemenus?style=html"
+    // )
+    //   .then(response => {
+    //     return response.json();
+    //   })
+    //   .then(json => {
+    //     self.menus(MakeMenus(json));
+    //   });
+    $.getJSON("http://comm-data-dev.beckman.illinois.edu/api/v1/feeds/cafemenus?style=html", function(response){
+      self.menus(MakeMenus(response));
+    });
     setTimeout(getMenus, 3000);
   })();
 }
 
 ko.applyBindings(new DailyMenuViewModel());
+
+(function test() {
+  
+})();
