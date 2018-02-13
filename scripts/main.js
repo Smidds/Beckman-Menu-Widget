@@ -1,13 +1,3 @@
-require.config({
-  baseUrl: 'libs',
-  paths: {
-      app: '../main',
-      jquery: '../libs/jquery-3.3.1.min.js',
-      knockout: '../libs/knockout-3.4.2.js'
-  }
-});
-
-
 function Menu(Title, DateTime, Description) {
   var self = this;
   self.title = ko.observable(Title);
