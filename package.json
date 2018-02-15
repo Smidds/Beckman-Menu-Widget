@@ -1,0 +1,22 @@
+{
+  "name": "beckman-menu-widget",
+  "version": "1.0.0",
+  "description": "This is the Beckman Menu Widget for SignageLive",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Smidds/Beckman-Menu-Widget.git"
+  },
+  "author": "Isaac Smith",
+  "license": "NCSA",
+  "bugs": {
+    "url": "https://github.com/Smidds/Beckman-Menu-Widget/issues"
+  },
+  "homepage": "https://github.com/Smidds/Beckman-Menu-Widget#readme",
+  "dependencies": {
+    "ms-signalr-client": "^2.2.7"
+  }
+}
